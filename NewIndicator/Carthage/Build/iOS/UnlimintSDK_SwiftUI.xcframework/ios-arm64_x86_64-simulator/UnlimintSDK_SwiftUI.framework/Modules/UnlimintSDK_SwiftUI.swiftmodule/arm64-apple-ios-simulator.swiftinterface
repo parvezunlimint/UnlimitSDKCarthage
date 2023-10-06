@@ -116,10 +116,14 @@ extension UnlimintSDK_SwiftUI.Unlimint {
     case card(UnlimintSDK_Core.PaymentMethodData)
     case cardToken(type: UnlimintSDK_Core.CardPaymentSystem?, UnlimintSDK_Core.PaymentTokenMethodData)
     case payPal(UnlimintSDK_Core.PaypalPaymentMethodData)
+    case recurringCardToken(type: UnlimintSDK_Core.CardPaymentSystem?, UnlimintSDK_Core.RecurringPaymentTokenMethodData)
+    case recurringPaymentCard(UnlimintSDK_Core.RecurringPaymentMethodData)
   }
   final public func checkout(for mobileToken: Swift.String, with methods: [UnlimintSDK_SwiftUI.Unlimint.PaymentMethods]) -> some SwiftUI.View
   
   final public func bind(for mobileToken: Swift.String, with methods: UnlimintSDK_Core.BindingMethodData) -> some SwiftUI.View
+  
+  final public func recuringPayment(for mobileToken: Swift.String, with methods: [UnlimintSDK_SwiftUI.Unlimint.PaymentMethods]) -> some SwiftUI.View
   
 }
 @_Concurrency.MainActor(unsafe) public struct HomeViewSwiftUI : SwiftUI.View {
