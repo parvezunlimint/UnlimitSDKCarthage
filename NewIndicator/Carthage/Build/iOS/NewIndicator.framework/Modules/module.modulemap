@@ -1,0 +1,11 @@
+framework module NewIndicator {
+  umbrella header "NewIndicator.h"
+  export *
+
+  module * { export * }
+}
+
+module NewIndicator.Swift {
+  header "NewIndicator-Swift.h"
+  requires objc
+}
